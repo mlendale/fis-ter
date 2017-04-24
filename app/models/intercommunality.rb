@@ -1,4 +1,6 @@
 class Intercommunality < ApplicationRecord
+  has_many :communes
+
   validates :siren, :name, presence: true
   validates :siren, uniqueness: true, numericality: {only_integer: true}, length: {is: 9}
   validates :form, inclusion: {in: %w(ca cu cc met)}
